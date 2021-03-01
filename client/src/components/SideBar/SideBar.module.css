@@ -24,3 +24,6 @@
 .icon {
   font-size: 1.5rem;
 }
+span {
+  user-select: none;
+}

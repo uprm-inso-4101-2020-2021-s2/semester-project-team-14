@@ -1,10 +1,32 @@
 import SideBar from './components/SideBar/SideBar';
 import QuoteGenerator from './components/QuoteGenerator/QuoteGenerator';
+import { useState, useEffect } from 'react';
+import Mindfulness from './components/Mindfulness/Mindfulness';
+import Scheduler from './components/Scheduler/Scheduler';
+import ToDoList from './components/ToDoList/ToDoList';
+
 function App() {
+  const [selectedMenu, setSelectedMenu] = useState('todolist');
+  const [content, setContent] = useState('');
+  const [author, setAuthor] = useState('');
+  async function randomQuote() {
+    const response = await fetch(
+      'https://api.quotable.io/random?tags=inspirational'
+    );
+    const data = await response.json();
+    setContent(data.content);
+    setAuthor(data.author);
+  }
+  useEffect(() => {
+    randomQuote();
+  }, []);
   return (
     <div className='app'>
-      <SideBar />
-      <QuoteGenerator />
+      <SideBar setSelectedMenu={setSelectedMenu} randomQuote={randomQuote} />
+      <QuoteGenerator content={content} author={author} />
+      {selectedMenu == 'mindfulness' ? <Mindfulness /> : null}
+      {selectedMenu == 'scheduler' ? <Scheduler /> : null}
+      {selectedMenu == 'todolist' ? <ToDoList /> : null}
     </div>
   );
 }
