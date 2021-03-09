@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './TodoForm.module.css';
 
-const TodoForm = ({ addTodo, edit }) => {
+const TodoForm = ({ addTodo }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {

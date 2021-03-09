@@ -9,14 +9,18 @@ function App() {
   const [selectedMenu, setSelectedMenu] = useState('todolist');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
-  async function randomQuote() {
-    const response = await fetch(
-      'https://api.quotable.io/random?tags=inspirational'
-    );
-    const data = await response.json();
-    setContent(data.content);
-    setAuthor(data.author);
-  }
+  const randomQuote = async () => {
+    try {
+      const response = await fetch(
+        'https://api.quotable.io/random?tags=inspirational'
+      );
+      const data = await response.json();
+      setContent(data.content);
+      setAuthor(data.author);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     randomQuote();
   }, []);

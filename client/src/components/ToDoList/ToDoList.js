@@ -3,7 +3,7 @@ import styles from './TodoList.module.css';
 import TodoForm from '../TodoForm/TodoForm';
 import Todo from '../Todo/Todo';
 
-const ToDoList = () => {
+const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState({
     id: null,
@@ -51,4 +51,4 @@ const ToDoList = () => {
   );
 };
 
-export default ToDoList;
+export default TodoList;
