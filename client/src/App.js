@@ -3,7 +3,7 @@ import QuoteGenerator from './components/QuoteGenerator/QuoteGenerator';
 import { useState, useEffect } from 'react';
 import Mindfulness from './components/Mindfulness/Mindfulness';
 import Scheduler from './components/Scheduler/Scheduler';
-import ToDoList from './components/ToDoList/ToDoList';
+import TodoList from './components/TodoList/TodoList';
 
 function App() {
   const [selectedMenu, setSelectedMenu] = useState('todolist');
@@ -26,7 +26,7 @@ function App() {
       <QuoteGenerator content={content} author={author} />
       {selectedMenu == 'mindfulness' ? <Mindfulness /> : null}
       {selectedMenu == 'scheduler' ? <Scheduler /> : null}
-      {selectedMenu == 'todolist' ? <ToDoList /> : null}
+      {selectedMenu == 'todolist' ? <TodoList /> : null}
     </div>
   );
 }

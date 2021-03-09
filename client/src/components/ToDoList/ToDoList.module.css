@@ -2,5 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 0 40% 0 60%;
+}
+.clearButton {
+  width: 5em;
+  height: 2em;
+  background-color: transparent;
+  border-radius: 5px;
 }
