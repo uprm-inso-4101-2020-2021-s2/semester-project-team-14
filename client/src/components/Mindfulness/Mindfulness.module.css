@@ -1,6 +1,23 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 40% 0 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 40% 0 60%;
+    font-size: 10rem;
+}
+.icon {
+    padding: 0.35em;
+}
+.icon:hover {
+    cursor: pointer;
+    background-color: rgb(175, 175, 175);
+}
+.text {
+    font-size: 1.5rem;
+}
+.iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
