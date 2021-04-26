@@ -6,6 +6,7 @@ import Scheduler from './components/Scheduler/Scheduler';
 import TodoList from './components/TodoList/TodoList';
 import LandingPage from './components/LandingPage/LandingPage';
 import styles from './App.module.css';
+import Pomodoro from './components/Mindfulness/Pomodoro/Pomodoro';
 
 function App() {
     const [selectedMenu, setSelectedMenu] = useState('todolist');
@@ -38,9 +39,10 @@ function App() {
                 <div>
                     <SideBar setSelectedMenu={setSelectedMenu} randomQuote={randomQuote} />
                     <QuoteGenerator content={content} author={author} />
-                    {selectedMenu == 'mindfulness' ? <Mindfulness /> : null}
+                    {selectedMenu == 'mindfulness' ? <Mindfulness setSelectedMenu={setSelectedMenu} /> : null}
                     {selectedMenu == 'scheduler' ? <Scheduler /> : null}
                     {selectedMenu == 'todolist' ? <TodoList /> : null}
+                    {selectedMenu == 'pomodoro' ? <Pomodoro /> : null}
                 </div>
             )}
 

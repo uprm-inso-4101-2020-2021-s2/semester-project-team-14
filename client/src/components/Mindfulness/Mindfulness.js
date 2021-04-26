@@ -3,7 +3,11 @@ import styles from './Mindfulness.module.css';
 import { FaBrain, FaDumbbell } from 'react-icons/fa';
 import { MdTimer } from 'react-icons/md';
 
-const Mindfulness = () => {
+const Mindfulness = ({ setSelectedMenu }) => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        setSelectedMenu('pomodoro');
+    };
     return (
         <div className={styles.container}>
             <div className={styles.iconContainer}>
@@ -14,7 +18,7 @@ const Mindfulness = () => {
             </div>
             <div className={styles.iconContainer}>
                 <p className={styles.text}> Pomodoro Timer</p>
-                <div className={styles.icon}>
+                <div onClick={handleClick} className={styles.icon}>
                     <MdTimer />
                 </div>
             </div>
